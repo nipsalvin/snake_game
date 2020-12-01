@@ -10,7 +10,7 @@ delay = 0.1
 #Set up screen
 wn = turtle.Screen()
 wn.title("Snake_Game_by_@Nips")
-wn.bgcolor("green")
+wn.bgcolor("black")
 wn.setup(width = 600, height = 600)
 #Turns off screen updates 
 wn.tracer(0)
@@ -19,11 +19,18 @@ wn.tracer(0)
 head = turtle.Turtle()
 head.speed(0)
 head.shape("square")
-head.color("black")
+head.color("green")
 head.penup()
 head.goto(0,0)
 head.direction = "stop"
 
+#Snake food
+food = turtle.Turtle()
+food.speed(0)
+food.shape("circle")
+food.color("red")
+food.penup()
+food.goto(0,100)
 
 #functions
 def go_up():
@@ -68,6 +75,12 @@ wn.onkeypress(go_right, "d")
 #Main game loop
 while True:
     wn.update()
+
+    if head.distance(food) < 20:
+        #Change position of food
+        x = random.randint(-290, 290)
+        y = random.randint(-290, 290)
+        food.goto(x,y)
 
     move()
     
