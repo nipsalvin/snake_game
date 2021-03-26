@@ -1,3 +1,4 @@
+#Made by @Nips
 import os
 import turtle
 import time
@@ -10,7 +11,6 @@ delay = 0.1
 #scores
 score = 0
 high_score = 0
-
 
 #Set up screen
 wn = turtle.Screen()
