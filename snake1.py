@@ -5,6 +5,7 @@ import time
 import random
 
 
+#Time of movement
 delay = 0.1
 
 
