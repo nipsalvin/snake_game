@@ -4,10 +4,8 @@ import turtle
 import time
 import random
 
-
 #Time of movement
 delay = 0.1
-
 
 #scores
 score = 0
@@ -21,7 +19,6 @@ wn.setup(width = 600, height = 600)
 #Turns off screen updates 
 wn.tracer(0)
 
-
 #Snake head
 head = turtle.Turtle()
 head.speed(0)
@@ -31,7 +28,6 @@ head.penup()
 head.goto(0,0)
 head.direction = "stop"
 
-
 #Snake_food
 food = turtle.Turtle()
 food.speed(0)
@@ -39,7 +35,6 @@ food.shape("circle")
 food.color("red")
 food.penup()
 food.goto(0,100)
-
 
 #Snake_body
 segments = []
@@ -53,8 +48,6 @@ pen.penup()
 pen.hideturtle()
 pen.goto(0, 260)
 pen.write("Score: 0  Highscore: 0", align = "center", font =("Courier", 24, "normal"))
-
-
 
 #functions
 def go_up():
@@ -73,7 +66,6 @@ def go_right():
     if head.direction != "left":
         head.direction = "right"
 
-
 def move():
     if head.direction == "up":
         y = head.ycor()
@@ -91,14 +83,12 @@ def move():
         x = head.xcor()
         head.setx(x - 20)
 
-
 #Keyboard bindings
 wn.listen()
 wn.onkeypress(go_up, "Up")
 wn.onkeypress(go_down, "Down")
 wn.onkeypress(go_left, "Left")
 wn.onkeypress(go_right, "Right")
-
 
 #Main game loop
 while True:
@@ -124,8 +114,6 @@ while True:
         pen.clear()
         pen.write("Score: {}  Highscore: {}".format(score, high_score), align = "center", font =("Courier", 24, "normal"))
 
-        
-
     #Collision with food
     if head.distance(food) < 20:
         #Change position of food
@@ -149,8 +137,6 @@ while True:
         
         pen.clear()
         pen.write("Score: {}  Highscore: {}".format(score, high_score), align = "center", font =("Courier", 24, "normal"))
-
-
     
     #Moving end segments first in reverse order
     for index in range(len(segments)-1, 0, -1):
