@@ -112,7 +112,7 @@ while True:
         score = 0
 
         pen.clear()
-        pen.write("Score: {}  Highscore: {}".format(score, high_score), align = "center", font =("Courier", 24, "normal"))
+        pen.write(f"Score: {score}  Highscore: {high_score}", align = "center", font =("Courier", 24, "normal"))
 
     #Collision with food
     if head.distance(food) < 20:
@@ -136,7 +136,7 @@ while True:
             high_score = score
         
         pen.clear()
-        pen.write("Score: {}  Highscore: {}".format(score, high_score), align = "center", font =("Courier", 24, "normal"))
+        pen.write(f"Score: {score}  Highscore: {high_score}", align = "center", font =("Courier", 24, "normal"))
     
     #Moving end segments first in reverse order
     for index in range(len(segments)-1, 0, -1):
